@@ -28,23 +28,21 @@ namespace LinkedList
                 temp.next = node;
             }
         }
-
-            //Display LinkedList Data through Method
-            internal void Display()
+        //Display LinkedList Data through Method
+        internal void Display()
+        {
+            //Head is Null then List is empty otherwise print All data of Linked List
+            if (this.head == null)
+                Console.WriteLine("The list is empty.");
+            else
             {
-                //Head is Null then List is empty otherwise print All data of Linked List
-                if (this.head == null)
-                    Console.WriteLine("The list is empty.");
-                else
+                Node temp = head;
+                while (temp != null)
                 {
-                    Node temp = head;
-                    while (temp != null)
-                    {
-                        Console.WriteLine("Data : " + temp.data);
-                        temp = temp.next;
-                    }
+                    Console.WriteLine("Data : " + temp.data);
+                    temp = temp.next;
                 }
             }
         }
     }
-
+}
