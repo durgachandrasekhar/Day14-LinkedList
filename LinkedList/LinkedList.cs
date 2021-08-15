@@ -9,7 +9,7 @@ namespace LinkedList
         //Instance
         internal Node head;
 
-        //Adding Data to LinkedList
+        //Appending Data to LinkedList
         internal void Add(int data)
         {
             //Object of Node
@@ -25,6 +25,30 @@ namespace LinkedList
                 {
                     temp = temp.next;
                 }
+                temp.next = node;
+            }
+        }
+        //Adding Data In Particular Position
+        public void InsertAtParticularPosition(int position, int data)
+        {
+            Node node = new Node(data);
+            if (position < 1)
+                Console.WriteLine("Invalid Position");
+            else if (position == 1)
+            {
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                Node temp = head;
+
+                while (position > 2)
+                {
+                    temp = temp.next;
+                    position--;
+                }
+                node.next = temp.next;
                 temp.next = node;
             }
         }
